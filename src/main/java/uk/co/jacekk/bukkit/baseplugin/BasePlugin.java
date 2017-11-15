@@ -57,12 +57,6 @@ public abstract class BasePlugin extends JavaPlugin {
 	 * @param createFolder	If this is true then the plugin's data folder will be created if it does not exist.
 	 */
 	public void onEnable(boolean createFolder){
-		// This prevents Maven Shade plugin from replacing the package name
-		String packageName = new String(new char[]{'u', 'k', '.', 'c', 'o', '.', 'j', 'a', 'c', 'e', 'k', 'k', '.', 'b', 'u', 'k', 'k', 'i', 't', '.', 'b', 'a', 's', 'e', 'p', 'l', 'u', 'g', 'i', 'n'});
-		
-		if (!BasePlugin.class.getName().equals(packageName + ".v" + PACKAGE_NAME + ".BasePlugin")){
-			throw new PackageNameException(BasePlugin.class.getName());
-		}
 		
 		this.description = this.getDescription();
 		this.log = new PluginLogger(this);
